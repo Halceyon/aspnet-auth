@@ -12,7 +12,7 @@ cache:
   directories:
     - node_modules
 node_js:
-  - '6'
+  - '9'
 install:
   - npm install
   - npm install -g codecov
