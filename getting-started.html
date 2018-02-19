@@ -1,0 +1,85 @@
+<!doctype html>
+<html class="no-js" lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Getting Started ∙ Babel Starter Kit</title>
+  <meta name="description" content="A standalone lightweight javascript library for authenticating with ASP.NET OWIN site.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/aspnet-auth/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700italic">
+  <link rel="stylesheet" href="/aspnet-auth/main.css">
+</head>
+<body>
+  <div class="header">
+  <div class="container">
+    <a class="header__logo" href="/aspnet-auth/">
+      aspnet-auth
+    </a>
+        <span class="header__author">
+          made with &nbsp;♥&nbsp; by&nbsp; <a href="https://twitter.com/halceyon" rel="author" title="Halceyon on Twitter">@halceyon</a>
+        </span>
+
+  </div>
+</div>
+
+
+  <div class="content">
+    <div class="content-left">
+      <div class="nav">
+  <h3 class="nav__title">Quick Start</h3>
+  <ul class="nav__menu">
+    <li class="nav__menu-item">
+      <a class="nav__link" href="/aspnet-auth/">Overview</a>
+    </li>
+    <li class="nav__menu-item nav__menu-item--selected">
+      <a class="nav__link" href="/aspnet-auth/getting-started">Getting Started</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+    <div class="content-right">
+      <h1>Getting Started</h1>
+<p>Install using npm and save it as a dependency.</p>
+<h2>Install</h2>
+<p>From CDN</p>
+<pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/aspnet-auth&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>From <a href="https://npmjs.org">npm</a></p>
+<pre><code class="language-sh">npm install aspnet-auth --save
+</code></pre>
+<h3>Initialize</h3>
+<pre><code class="language-js">const aspnetAuth = new AspnetAuth({
+  url: 'http://your-domain-name',
+});
+</code></pre>
+<h2>Usage</h2>
+<p><strong>register</strong></p>
+<pre><code class="language-js">aspnetAuth.register('email@email.com', 'SomePassword', 'SomePassword').then((result) =&gt; {
+  // returns result.status = 200 on success
+  done();
+})
+  .catch((err) =&gt; {
+    console.log(err);
+  });
+</code></pre>
+<p><strong>login</strong></p>
+<pre><code class="language-js">aspnetAuth.login('email@email.com', 'SomePassword').then((result) =&gt; {
+  // returns result.status = 200 on success
+  done();
+})
+  .catch((err) =&gt; {
+    console.log(err);
+  });
+</code></pre>
+
+      
+
+      
+    </div>
+  </div>
+  <script src="/aspnet-auth/main.js"></script>
+
+</body>
+</html>
