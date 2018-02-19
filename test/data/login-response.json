@@ -1,0 +1,10 @@
+{
+  ".expires": "Mon, 19 Feb 2018 04:14:43 GMT",
+  ".issued": "Mon, 19 Feb 2018 01:14:43 GMT",
+  "access_token": "6GBfKnsS_YK5BSzBzgiyV5mVVtSEFFDGp4ZTUVCewRcDq1GmuNRO52j7l-Y97D0aVqoNrha9uQkYlL7v7ej9HCBkgIzYWpV_HqeR5BnZyr-vJQALcXfJq__g_SgWuY_LjG4D5-olxwcYdTEnSgNEdnWTPujXTVDZFd6-gOkKrSu470v7KYqt4uMZkwiw9qTaHifodNcAQfs_2TY5J8gAAS7rid6MOmZxOsQnGZ0LQZBHjDHUybk5E5cHBpOZxgTRvy72trDqMmjjFUaxK5Y6piuUlYRCH5e_WqL02lb6CVzhL4MNqsK6XKFENXiPKJTvOVtTkYvLnWgpPuTbvNi7bV3fRMQ6wisVijsGVsXmZrw",
+  "as:client_id": "jsApp",
+  "expires_in": 10799,
+  "refresh_token": "175f0a68e51a420eb27ec707a53cce70",
+  "token_type": "bearer",
+  "userName": "support@codehq.co.za"
+}
