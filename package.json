@@ -1,6 +1,6 @@
 {
   "name": "aspnet-auth",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "javascript library for aspnet authentication.",
   "author": "Craig Pretorius <craigp@codehq.co.za>",
   "repository": "Halceyon/aspnet-auth",
