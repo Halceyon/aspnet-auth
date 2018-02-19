@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "javascript library for aspnet authentication.",
   "author": "Craig Pretorius <craigp@codehq.co.za>",
-  "repository": "kriasoft/babel-starter-kit",
+  "repository": "Halceyon/aspnet-auth",
   "contributors": [
     "Craig Pretorius <craigp@codehq.co.za>"
   ],
