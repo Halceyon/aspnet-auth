@@ -3,7 +3,5 @@
 * [Overview](index.md)
 * [Getting Started](getting-started.md)
 * Recipes
-  * [Testing with <code>mocha</code> and <code>jsdom</code>](recipes/testing-with-mocha-and-jsdom.md)
-  * [Throwing errors with FB's <code>invariant</code> library](recipes/throwing-errors-with-fbjs-invariant.md)
-
-See also [www.kriasoft.com/babel-starter-kit](https://www.kriasoft.com/babel-starter-kit/)
+  * [Register a new user from javascript](recipes/register-new-user.md)
+  * [Login a user from javascript](recipes/login-existing-user.md)

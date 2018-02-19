@@ -23,9 +23,9 @@ after_success:
   - npm run build
   - npm run coveralls
   - bash <(curl -s https://codecov.io/bash)
+  - npm run publish:docs
 before_deploy:
   - cd dist
-  - npx semantic-release
 deploy:
   provider: npm
   email: craigp@codehq.co.za

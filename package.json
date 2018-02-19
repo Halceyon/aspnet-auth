@@ -1,8 +1,9 @@
 {
   "name": "aspnet-auth",
-  "version": "0.0.2",
-  "description": "javascript library for aspnet authentication.",
+  "version": "1.0.0",
+  "description": "A standalone lightweight javascript library for authenticating with ASP.NET OWIN site.",
   "author": "Craig Pretorius <craigp@codehq.co.za>",
+  "homepage": "https://halceyon.github.io/aspnet-auth",
   "repository": "Halceyon/aspnet-auth",
   "contributors": [
     "Craig Pretorius <craigp@codehq.co.za>"
@@ -66,7 +67,7 @@
     "coveralls": "type ./coverage/lcov.info | coveralls",
     "build": "node tools/build",
     "prepublish": "npm run build",
-    "publish:docs": "easystatic deploy docs --repo kriasoft/babel-starter-kit",
+    "publish:docs": "easystatic deploy docs --repo Halceyon/aspnet-auth",
     "dev": "easystatic start docs"
   }
 }
