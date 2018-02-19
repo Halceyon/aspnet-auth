@@ -124,4 +124,3 @@ class AspnetAuth {
 }
 
 export default AspnetAuth;
-

@@ -7,4 +7,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-export AspnetAuth from './AspnetAuth.js';
+import AspnetAuth from './AspnetAuth';
+
+export default AspnetAuth;
