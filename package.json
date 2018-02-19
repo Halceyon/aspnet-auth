@@ -1,6 +1,6 @@
 {
   "name": "aspnet-auth",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A standalone lightweight javascript library for authenticating with ASP.NET OWIN site.",
   "author": "Craig Pretorius <craigp@codehq.co.za>",
   "homepage": "https://halceyon.github.io/aspnet-auth",
