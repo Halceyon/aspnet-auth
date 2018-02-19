@@ -5,8 +5,6 @@ A standalone lightweight javascript library for authenticating with ASP.NET OWIN
 
 # Getting Started
 
-Install using npm and save it as a dependency.
-
 ## Install
 
 From CDN
