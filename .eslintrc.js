@@ -8,16 +8,11 @@ module.exports = {
   env: {
     browser: true,
   },
-  // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
-  // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
   extends: ['airbnb-base'],
-  // required to lint *.vue files
-  // check if imports actually resolve
-  // add your custom rules here
   rules: {
     "linebreak-style": "off",
+    "indent": ["error", 2],
     'max-len': ["error", { "code": 250 }],
-    // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
       js: 'never',
     }],
@@ -36,6 +31,6 @@ module.exports = {
       optionalDependencies: ['test/unit/index.js']
     }],
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
   }
 }
