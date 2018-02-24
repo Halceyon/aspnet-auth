@@ -34,7 +34,7 @@ const aspnetAuth = new AspnetAuth({
 
 **register**
 ```js
-aspnetAuth.register('email@email.com', 'SomePassword', 'SomePassword').then((result) => {
+aspnetAuth.register('email@email.com', 'SomePassword').then((result) => {
   // returns result.status = 200 on success
   done();
 })
