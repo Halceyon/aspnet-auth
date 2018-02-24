@@ -1,7 +1,7 @@
 {
   "name": "aspnet-auth",
   "version": "1.0.1",
-  "description": "A standalone lightweight javascript library for authenticating with ASP.NET OWIN site.",
+  "description": "A standalone promise-based javascript library for authenticating with ASP.NET OWIN site.",
   "author": "Craig Pretorius <craigp@codehq.co.za>",
   "homepage": "https://halceyon.github.io/aspnet-auth",
   "repository": "Halceyon/aspnet-auth",
@@ -10,8 +10,8 @@
   ],
   "license": "MIT",
   "keywords": [],
-  "main": "aspnet-auth.js",
-  "jsnext:main": "aspnet-auth.es.js",
+  "main": "dist/aspnet-auth.js",
+  "jsnext:main": "dist/aspnet-auth.es.js",
   "babel": {
     "presets": [
       "latest",
