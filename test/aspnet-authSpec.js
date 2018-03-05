@@ -110,6 +110,6 @@ describe('AspnetAuth', () => {
         console.log(err);
       });
 
-    axios.post.restore();
+    axios.get.restore();
   });
 });
