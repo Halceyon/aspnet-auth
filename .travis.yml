@@ -7,7 +7,6 @@ notifications:
   email:
     on_success: always
     on_failure: change
-
 cache:
   directories:
     - node_modules
@@ -16,6 +15,8 @@ node_js:
 install:
   - npm install
   - npm install -g codecov
+before_script:
+  - npm prune
 script:
   - npm run lint
   - npm run test:cover
@@ -24,12 +25,7 @@ after_success:
   - npm run coveralls
   - bash <(curl -s https://codecov.io/bash)
   - npm run publish:docs
-before_deploy:
-  - cd dist
-deploy:
-  provider: npm
-  email: craigp@codehq.co.za
-  skip_cleanup: true
-  api_key: $NPM_TOKEN
-  on:
-    branch: master
+  - npm run semantic-release
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/

@@ -12,6 +12,6 @@
     ],
     "no-unused-expressions": "off",
     "padded-blocks": "off",
-    "no-console": "off",
+    "no-console": "off"
   }
 }

@@ -102,13 +102,13 @@ describe('AspnetAuth', () => {
     aspnetAuth.loginExternal({
       token: '',
     })
-    .then((response) => {
-      done();
-      expect(response.data.access_token).to.eq('175f0a68e51a420eb27ec707a53cce70');
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+      .then((response) => {
+        done();
+        expect(response.data.access_token).to.eq('175f0a68e51a420eb27ec707a53cce70');
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 
     axios.get.restore();
   });

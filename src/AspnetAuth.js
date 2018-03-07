@@ -14,7 +14,6 @@ const qs = require('qs');
 const stringify = require('json-stable-stringify');
 
 class AspnetAuth {
-
   constructor(options) {
     const defaults = {
       url: '',
@@ -63,13 +62,12 @@ class AspnetAuth {
       client_id: this.options.client_id,
       client_secret: this.options.client_secret,
       grant_type: 'password',
-    }),
-    )
-    .then((response) => {
-      this.saveAuth(response.data);
-      this.fillAuth();
-      return response;
-    });
+    }))
+      .then((response) => {
+        this.saveAuth(response.data);
+        this.fillAuth();
+        return response;
+      });
   }
 
   loginExternal(tokenRequest) {
