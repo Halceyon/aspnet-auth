@@ -21,7 +21,11 @@ sinonStubPromise(sinon);
 
 describe('AspnetAuth', () => {
   let aspnetAuth;
-
+  global.window = {
+    location: {
+      protocol: 'http:',
+    },
+  };
   beforeEach(() => {
     sinon.stub(cookies, 'get').returns(null);
     sinon.stub(cookies, 'set');

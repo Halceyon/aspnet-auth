@@ -104,8 +104,13 @@ class AspnetAuth {
   }
 
   saveAuth(result) {
+    let secure = false;
+    // save secure cookies for https requests
+    if (window.location.protocol === 'https:') {
+      secure = true;
+    }
     cookies.set(this.cookieName, stringify(result), {
-      secure: true,
+      secure,
     });
   }
 
