@@ -31,10 +31,9 @@ promise = promise.then(() => del(['dist/*']));
       presets: pkg.babel.presets.map(x => (x === 'latest' ? ['latest', { es2015: { modules: false } }] : x)),
     }))],
   }).then(bundle => bundle.write({
-    dest: `dist/${format === 'cjs' ? 'aspnet-auth' : `aspnet-auth-${format}`}.js`,
+    file: `dist/${format === 'cjs' ? 'aspnet-auth' : `aspnet-auth-${format}`}.js`,
     format,
-    sourceMap: true,
-    moduleName: format === 'umd' ? pkg.name : undefined,
+    name: format === 'umd' ? pkg.name : undefined,
   })));
 });
 
