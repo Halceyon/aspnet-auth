@@ -95,7 +95,7 @@ describe('AspnetAuth', () => {
 
   it('should login an external user', (done) => {
     const loginResponse = parseJson(fs.readFileSync('test/data/login-response.json').toString());
-    sinon.stub(axios, 'post').resolves({
+    sinon.stub(axios, 'get').resolves({
       status: 200,
       data: loginResponse,
     });
@@ -110,6 +110,6 @@ describe('AspnetAuth', () => {
       console.log(err);
     });
 
-    axios.post.restore();
+    axios.get.restore();
   });
 });

@@ -73,7 +73,7 @@ class AspnetAuth {
   }
 
   loginExternal(tokenRequest) {
-    return this.http.post('/api/account/ObtainLocalAccessToken', qs.stringify(tokenRequest))
+    return this.http.get(`/api/account/ObtainLocalAccessToken?externalAccessToken=${tokenRequest.externalAccessToken}&provider=${tokenRequest.provider}`)
     .then((response) => {
       this.saveAuth(response.data);
       this.fillAuth();
