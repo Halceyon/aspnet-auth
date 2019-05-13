@@ -19,10 +19,10 @@ before_script:
   - npm prune
 script:
   - npm run lint
-  - npm run test:cover
+  - npm run test
 after_success:
   - npm run build
-  - npm run coveralls
+  # - npm run coveralls
   - bash <(curl -s https://codecov.io/bash)
   - npm run publish:docs
   - npm run semantic-release
