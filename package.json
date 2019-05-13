@@ -1,6 +1,6 @@
 {
   "name": "aspnet-auth",
-  "version": "1.0.2",
+  "version": "1.3.2",
   "description": "A standalone promise-based javascript library for authenticating with ASP.NET OWIN site.",
   "author": "Craig Pretorius <craigp@codehq.co.za>",
   "homepage": "https://halceyon.github.io/aspnet-auth",
