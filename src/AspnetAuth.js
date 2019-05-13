@@ -41,21 +41,26 @@ class AspnetAuth {
     return axios;
   }
 
-  register(username, password, confirmPassword) {
+  register(username, password) {
+    // strange quirk where the baseURL is not persisted
+    axios.defaults.baseURL = this.options.url;
     return this.http.post('/api/account/register', {
       Username: username,
       Password: password,
-      ConfirmPassword: confirmPassword,
     });
   }
 
   forgot(email) {
+    // strange quirk where the baseURL is not persisted
+    axios.defaults.baseURL = this.options.url;
     return this.http.post('/api/account/forgotpassword', {
       email,
     });
   }
 
   login(username, password) {
+    // strange quirk where the baseURL is not persisted
+    axios.defaults.baseURL = this.options.url;
     return this.http.post('/token', qs.stringify({
       username,
       password,
@@ -71,6 +76,8 @@ class AspnetAuth {
   }
 
   loginExternal(tokenRequest) {
+    // strange quirk where the baseURL is not persisted
+    axios.defaults.baseURL = this.options.url;
     return this.http.get(`/api/account/ObtainLocalAccessToken?externalAccessToken=${tokenRequest.externalAccessToken}&provider=${tokenRequest.provider}`)
       .then((response) => {
         this.saveAuth(response.data);
@@ -95,6 +102,8 @@ class AspnetAuth {
       client_id: this.options.client_id,
       client_secret: this.options.client_secret,
     };
+    // strange quirk where the baseURL is not persisted
+    axios.defaults.baseURL = this.options.url;
     return this.http.post('/token', qs.stringify(tokenRequest))
       .then((response) => {
         this.saveAuth(response);
