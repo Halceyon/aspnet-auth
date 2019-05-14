@@ -41,12 +41,13 @@ class AspnetAuth {
     return axios;
   }
 
-  register(username, password) {
+  register(username, email, password) {
     // strange quirk where the baseURL is not persisted
     axios.defaults.baseURL = this.options.url;
     return this.http.post('/api/account/register', {
       Username: username,
       Password: password,
+      Email: email,
     });
   }
 
