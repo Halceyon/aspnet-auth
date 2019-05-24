@@ -22,7 +22,7 @@ promise = promise.then(() => del(['dist/*']));
 // Compile source code into a distributable format with Babel
 ['es', 'cjs', 'umd'].forEach((format) => {
   promise = promise.then(() => rollup.rollup({
-    entry: 'src/index.js',
+    input: 'src/index.js',
     external: Object.keys(pkg.dependencies),
     plugins: [babel(Object.assign(pkg.babel, {
       babelrc: false,
