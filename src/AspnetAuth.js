@@ -89,7 +89,7 @@ class AspnetAuth {
 
   logout() {
     // delete the cookie
-    cookies.set(this.cookieName);
+    cookies.erase(this.cookieName);
 
     // clear cached values
     this.authentication = null;
