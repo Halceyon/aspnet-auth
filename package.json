@@ -44,7 +44,7 @@
     "coveralls": "^3.0.3",
     "del": "^3.0.0",
     "easystatic": "^0.1.12",
-    "eslint": "^5.0.0",
+    "eslint": "^6.0.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.9.0",
     "faker": "^4.1.0",
