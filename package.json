@@ -46,7 +46,7 @@
     "easystatic": "^0.1.12",
     "eslint": "^5.0.0",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-import": "^2.18.1",
     "faker": "^4.1.0",
     "istanbul": "^1.1.0-alpha.1",
     "json-stable-stringify": "^1.0.1",
