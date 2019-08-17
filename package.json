@@ -28,7 +28,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "browser-cookies": "^1.2.0",
-    "qs": "^6.7.0",
+    "qs": "^6.8.0",
     "stringify": "^5.2.0"
   },
   "devDependencies": {
