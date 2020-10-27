@@ -1,7 +1,7 @@
 /**
  * ASP.NET OWIN Auth Javascript Client (https://github.com/Halceyon/aspnet-auth)
  *
- * Copyright © 2018 Code HQ (Pty) Ltd. All rights reserved.
+ * Copyright © 2020 Code HQ (Pty) Ltd. All rights reserved.
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
@@ -17,8 +17,8 @@ class AspnetAuth {
   constructor(options) {
     const defaults = {
       url: '',
-      client_id: 'jsApp',
-      client_secret: '0000000000000', // TODO: Update your secret
+      client_id: options.clientId,
+      client_secret: options.secret,
     };
     this.options = Object.assign(defaults, options);
 
@@ -28,16 +28,17 @@ class AspnetAuth {
 
     this.authentication = null;
     this.cookieName = 'apnetAuth';
-    this.http = this.setupAxios();
+    this.axios = axios;
+    axios.defaults.baseURL = this.options.url;
 
     // try and load from cookies
     this.fillAuth();
   }
 
-  setupAxios() {
+  setupAxios(val) {
     // setup axios
-    axios.defaults.baseURL = this.options.url;
-    axios.interceptors.response.use(null, error => Promise.reject(error));
+    this.axios.interceptors.response.use(null, (error) => Promise.reject(error));
+    this.axios.defaults.headers.common.Authorization = `Bearer ${val.access_token}`;
     return axios;
   }
 
@@ -48,6 +49,30 @@ class AspnetAuth {
       Username: username,
       Password: password,
       Email: email,
+    });
+  }
+
+  /**
+   * Register a new user user with an organization role.
+   *
+   * @param {username} username - The username
+   * @param {email} email - The email
+   * @param {password} password - The password
+   * @param {role} password - The role
+   * @return {Promise} returns axios promise
+   *
+   * @example
+   *
+   *     registerWithRole('joe@soap.com', ''joe@soap.com', 'Password01', 'AuroraAdmins')
+   */
+  registerWithRole(username, email, password, role) {
+    // strange quirk where the baseURL is not persisted
+    axios.defaults.baseURL = this.options.url;
+    return this.http.post('/api/account/register', {
+      Username: username,
+      Password: password,
+      Email: email,
+      Role: role,
     });
   }
 
@@ -65,6 +90,24 @@ class AspnetAuth {
     return this.http.post('/token', qs.stringify({
       username,
       password,
+      client_id: this.options.client_id,
+      client_secret: this.options.client_secret,
+      grant_type: 'password',
+    }))
+      .then((response) => {
+        this.saveAuth(response.data);
+        this.fillAuth();
+        return response;
+      });
+  }
+
+  loginTwoFactor(username, password, code) {
+    // strange quirk where the baseURL is not persisted
+    axios.defaults.baseURL = this.options.url;
+    return this.http.post('/token', qs.stringify({
+      username,
+      password,
+      code,
       client_id: this.options.client_id,
       client_secret: this.options.client_secret,
       grant_type: 'password',
@@ -114,13 +157,8 @@ class AspnetAuth {
   }
 
   saveAuth(result) {
-    let secure = false;
-    // save secure cookies for https requests
-    if (window.location.protocol === 'https:') {
-      secure = true;
-    }
     cookies.set(this.cookieName, stringify(result), {
-      secure,
+      secure: true,
     });
   }
 
@@ -132,6 +170,7 @@ class AspnetAuth {
     const authStr = this.readAuth();
     if (authStr) {
       this.authentication = parseJson(authStr);
+      this.setupAxios(authStr);
     }
   }
 }
