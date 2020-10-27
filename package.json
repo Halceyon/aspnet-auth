@@ -62,8 +62,7 @@
     "travis-deploy-once": "^5.0.0"
   },
   "scripts": {
-    "lint": "eslint src test tools",
-    "lint-fix": "eslint src test tools --fix",
+    "lint": "eslint src test",
     "test": "mocha --compilers js:babel-register",
     "test:watch": "mocha --compilers js:babel-register --reporter min --watch",
     "test:cover": "babel-node ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha",
